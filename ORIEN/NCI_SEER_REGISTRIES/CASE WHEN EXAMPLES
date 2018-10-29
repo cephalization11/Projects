@@ -1,0 +1,16 @@
+----WORKING: MULTIPLE CASE WHEN COLUMN CHECKS
+SELECT CASE
+            WHEN r."Race 1" IS NULL THEN 'NULL'
+            WHEN r."Race 1" = '9' then 'A 9/99/999 Code'
+            WHEN r."Race 1" = '99' then 'A 9/99/999 Code'
+            WHEN r."Race 1" = '999' then 'A 9/99/999 Code'
+            ELSE 'pass'
+        END AS Check_Race_1,  
+        CASE 
+            WHEN r."Race 2" IS NULL THEN 'NULL'
+            WHEN r."Race 2" = '9' then 'A 9/99/999 Code'
+            WHEN r."Race 2" = '99' then 'A 9/99/999 Code'
+            WHEN r."Race 2" = '999' then 'A 9/99/999 Code'        
+            ELSE 'pass'
+        END AS Check_Race_2
+   FROM tumor_reg_trunc_v r
